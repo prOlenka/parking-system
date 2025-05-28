@@ -1,0 +1,3 @@
+carNumber,carType,entryTime,exitTime
+ABC123,sedan,2025-05-01T08:00:00,2025-05-01T10:30:00
+XYZ987,truck,2025-05-01T09:00:00,2025-05-01T11:45:00

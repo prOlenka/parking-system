@@ -1,0 +1,18 @@
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/parking_db
+    username: postgres
+    password: yourpassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: Parking System
+
+input:
+  file: ./input/parking_data.csv
