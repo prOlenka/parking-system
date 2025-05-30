@@ -1,4 +1,4 @@
-package com.example.parking_system.controller;
+package com.example.parking_system.controller.v1;
 
 import com.example.parking_system.dto.EntryRequest;
 import com.example.parking_system.dto.ExitRequest;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 @RestController
-@RequestMapping("/api/parking")
-@Tag(name = "Парковка", description = "Операции с парковкой")
+@RequestMapping("/api/v1/parking")
+@Tag(name = "Парковка", description = "Операции с парковкой(v1)")
 public class ParkingController {
 
     private final ParkingService parkingService;
