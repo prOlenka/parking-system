@@ -4,6 +4,7 @@ import com.example.parking_system.dto.EntryRequest;
 import com.example.parking_system.dto.ExitRequest;
 import com.example.parking_system.dto.ReportResponse;
 import com.example.parking_system.entity.ParkingRecord;
+import com.example.parking_system.mapper.ParkingRecordMapper;
 import com.example.parking_system.repository.ParkingRecordRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,17 +16,16 @@ import java.util.List;
 public class ParkingService {
 
     private final ParkingRecordRepository repository;
+    private final ParkingRecordMapper mapper;
     private final int TOTAL_SPOTS = 100;
 
-    public ParkingService(ParkingRecordRepository repository) {
+    public ParkingService(ParkingRecordRepository repository, ParkingRecordMapper mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
     public LocalDateTime registerEntry(EntryRequest request) {
-        ParkingRecord record = new ParkingRecord();
-        record.setCarNumber(request.carNumber());
-        record.setCarType(request.carType());
-        record.setEntryTime(LocalDateTime.now());
+        ParkingRecord record = mapper.fromEntryRequest(request);
         repository.save(record);
         return record.getEntryTime();
     }

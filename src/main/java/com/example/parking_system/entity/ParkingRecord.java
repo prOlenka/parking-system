@@ -1,6 +1,7 @@
 package com.example.parking_system.entity;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Entity
