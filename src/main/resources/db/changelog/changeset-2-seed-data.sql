@@ -1,5 +1,11 @@
 --liquibase formatted sql
 
 --changeset yourname:2
-INSERT INTO parking_records (car_number, car_type, entry_time, exit_time)
-VALUES ('A123BC', 'Sedan', '2025-05-01 08:00:00', '2025-05-01 10:00:00');
+
+CREATE TABLE parking_db.parking_records (
+                                            id SERIAL PRIMARY KEY,
+                                            car_number VARCHAR(255) NOT NULL,
+                                            car_type VARCHAR(255) NOT NULL,
+                                            entry_time TIMESTAMP,
+                                            exit_time TIMESTAMP
+);

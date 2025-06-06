@@ -1,13 +1,15 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/parking_db
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: password
+    password: 1234
     driver-class-name: org.postgresql.Driver
 
   liquibase:
     enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.yml
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: parking_db
+    liquibase-schema: parking_db
 
   jpa:
     hibernate:
